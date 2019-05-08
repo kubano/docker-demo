@@ -6,7 +6,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:2.2-stretch AS build
 WORKDIR /src
 COPY ["docker-demo.csproj", ""]
-RUN dotnet restore "/docker-demo.csproj"
+RUN dotnet restore "docker-demo.csproj"
 COPY . .
 WORKDIR /src
 RUN dotnet build "docker-demo.csproj" -c Release -o /app
